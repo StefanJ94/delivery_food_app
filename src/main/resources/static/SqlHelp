@@ -17,6 +17,28 @@ PRIMARY KEY (id)
       [location] varchar (30),
       )
 
+3. CREATE TABLE Menu (
+      [menu_id] int IDENTITY(1,1) PRIMARY KEY,
+      [info] varchar (50),
+      [restaurant_id] int FOREIGN KEY REFERENCES Restaurants(restaurant_id)
+      )
+
+4.CREATE TABLE MenuItem (
+     [menu_item_id] int IDENTITY(1,1) PRIMARY KEY,
+     [name] varchar (50),
+     [info] varchar (50),
+     [price] int,
+     [menu_id] int FOREIGN KEY REFERENCES Menu(menu_id)
+     )
+
+5.CREATE TABLE Orders (
+       [orders_id] int IDENTITY(1,1) PRIMARY KEY,
+       [order_status] varchar (50),
+       [price] int,
+       [restaurant_id] int FOREIGN KEY REFERENCES Restaurants(restaurant_id),
+  	 [clients_id] varchar(150) FOREIGN KEY REFERENCES Clients(id)
+       )
+
 IMPORTANT INSTRUCTION: Admins for this application can't be registered through application.
 They need to be registered through database, because of security procedure.
 
