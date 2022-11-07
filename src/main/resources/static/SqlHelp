@@ -1,0 +1,25 @@
+INSTRUCTIONS:
+
+1.CREATE DATABASE Delivery_app;
+
+2.CREATE TABLE Clients (
+[id] varchar (150),
+[username] varchar (50),
+[password] varchar (30),
+[email] varchar (30),
+[userType] varchar (30),
+PRIMARY KEY (id)
+)
+
+2. CREATE TABLE Restaurants (
+   [id] varchar (150),
+   [name] varchar (50),
+   [location] varchar (30),
+   PRIMARY KEY (id)
+   )
+
+Important note: Administrators for this application can't be registered through application. They need to be registered through database, because of security procedure.
+{..."userType": "admin"}!
+
+EXAMPLE: INSERT INTO Clients([id],[username],[password],[email], [userType]) VALUES
+('232f393a-53bb-11ed-bdc3-0242ac121012','stefanJ','StefanJ123','jovanovic.s94@yahoo.com','admin')
