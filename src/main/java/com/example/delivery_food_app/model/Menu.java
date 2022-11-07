@@ -19,6 +19,14 @@ public class Menu {
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<MenuItem> items;
 
+    public void addItem(MenuItem menuItem) {
+        this.items.add(menuItem);
+    }
+
+    public List<MenuItem> getItems() {
+        return this.items;
+    }
+
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
@@ -33,6 +41,8 @@ public class Menu {
     public Restaurant getRestaurant() {
         return restaurant;
     }
+
+
 
     public Menu(String info, Restaurant restaurant) {
         this.info = info;
