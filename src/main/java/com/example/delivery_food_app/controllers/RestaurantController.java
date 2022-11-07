@@ -19,6 +19,7 @@ public class RestaurantController {
     private RestaurantRepository restaurantRepository;
     private RestaurantJpaRepository restaurantJpaRepository;
 
+
     private static int resId = 1;
 
     @Autowired

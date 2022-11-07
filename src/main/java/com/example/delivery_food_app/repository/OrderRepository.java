@@ -10,5 +10,5 @@ public interface OrderRepository {
 
     void insertOrder(Order order);
 
-    List<Order> getAllOrders();
+    List<Order> getAllOrdersByClientId(Order order);
 }
